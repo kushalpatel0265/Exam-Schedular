@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Scheduling Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Exam Scheduling Tool</h1>
+        
+        <section id="input-section">
+            <div class="input-group">
+                <h2>Add Exams</h2>
+                <form id="exam-form">
+                    <label for="exam-id">Exam ID:</label>
+                    <input type="number" id="exam-id" required>
+                    
+                    <label for="exam-name">Exam Name:</label>
+                    <input type="text" id="exam-name" required>
+                    
+                    <label for="num-students">Number of Students:</label>
+                    <input type="number" id="num-students" required>
+                    
+                    <label for="students">Student IDs (comma-separated):</label>
+                    <input type="text" id="students" placeholder="e.g., 1,2,3,4" required>
+                    
+                    <button type="submit">Add Exam</button>
+                </form>
+                <ul id="exam-list"></ul>
+            </div>
+            
+            <div class="input-group">
+                <h2>Add Rooms</h2>
+                <form id="room-form">
+                    <label for="room-id">Room ID:</label>
+                    <input type="number" id="room-id" required>
+                    
+                    <label for="room-capacity">Capacity:</label>
+                    <input type="number" id="room-capacity" required>
+                    
+                    <button type="submit">Add Room</button>
+                </form>
+                <ul id="room-list"></ul>
+            </div>
+            
+            <div class="input-group">
+                <h2>Add Time Slots</h2>
+                <form id="timeslot-form">
+                    <label for="timeslot-date">Date:</label>
+                    <input type="date" id="timeslot-date" required>
+                    
+                    <label for="timeslot-slot">Slot:</label>
+                    <select id="timeslot-slot" required>
+                        <option value="" disabled selected>Select Slot</option>
+                        <option value="Morning">Morning</option>
+                        <option value="Afternoon">Afternoon</option>
+                    </select>
+                    
+                    <button type="submit">Add Time Slot</button>
+                </form>
+                <ul id="timeslot-list"></ul>
+            </div>
+        </section>
+        
+        <section id="action-section">
+            <button id="schedule-btn">Generate Schedule</button>
+            <button id="reset-btn">Reset</button>
+        </section>
+        
+        <section id="schedule-section">
+            <h2>Exam Schedule</h2>
+            <table id="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Exam ID</th>
+                        <th>Exam Name</th>
+                        <th>Date</th>
+                        <th>Slot</th>
+                        <th>Room</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Schedule entries will appear here -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
